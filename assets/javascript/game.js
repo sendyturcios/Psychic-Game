@@ -1,9 +1,6 @@
 
 
 
-
-
-
 // variables to hold the number of wins, losses, and guesses left, and guesses so far. 
 var wins = 0;
 var losses = 0;
@@ -19,14 +16,14 @@ document.onkeyup = function(event) {
     guessesSoFar.push(userGuess); //adding user guess to guessesSoFar
     
     
-    if (userGuess == computerGuess) {
+    if (userGuess === computerGuess) {
         wins++;
         alert('You Won!');
         guessesLeft = 9; //reset guesses so user can play again
         guessesSoFar.length = 0; //removes everything from guesses so far to begin again
     }
    
-    else if (guessesLeft == 0){
+    else if (guessesLeft === 0){
         losses++;
         alert('You lost. Try again.');
         guessesLeft = 9;
@@ -34,15 +31,13 @@ document.onkeyup = function(event) {
     }
     
     
-    else if (userGuess !== computerGuess){
+    else if (userGuess == computerGuess){
         guessesLeft--; //Reducing number of guesses left after each input
     }  
     
 
       // Display in HTML    
-      var html = "<h1>The Psychic Game</h1>" + 
-      "<p>Guess what letter I'm thinking of!</p>" +
-      "<p>Total Wins: " + 
+      var html = "<p>Total Wins: " + 
       wins + 
       "</p>" +
       "<p>Total Losses: " + 
@@ -57,6 +52,6 @@ document.onkeyup = function(event) {
       ;
      
 
-      document.querySelector('#game').innerHTML = html;
+      document.querySelector('.container-fluid').innerHTML = html;
   }
 
