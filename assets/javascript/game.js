@@ -27,11 +27,11 @@ document.onkeyup = function(event) {
         losses++;
         alert('You lost. Try again.');
         guessesLeft = 9;
-        // guessesSoFar.length = 0;
+        guessesSoFar.length = 0;
     }
     
     
-    else if (userGuess === computerGuess){
+    else if (userGuess !== computerGuess){
         guessesLeft-- ; //Reducing number of guesses left after each input
     }  
     
